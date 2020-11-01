@@ -1,0 +1,9 @@
+<script type="text/x-template" id="posts-template">
+  <div class="posts">
+    <div class="scroll-anchor" ref="container"></div>
+    <transition-group name="transition-opacity" tag="div" class="columns is-multiline is-variable is-8">
+      <post-preview v-for="post in displayedPosts" v-bind:key="post.id" v-bind:post="post" class="column is-half" />
+    </transition-group>
+    <pagination v-bind:page="page" v-bind:total="totalPages" v-if="totalPages > 1" />
+  </div>
+</script>

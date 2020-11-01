@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div id="nomadogeeks">
+  {% include nav.html %}
+  <div id="content">
+    <div class="post" style="background-image: url(/assets/images/{{ page.permalink }}/preview-full.jpg)">
+      <div class="header">
+        <h1>{{ page.title }}</h1>
+        <div class="subtitle">
+          {% assign location = site.data.locations[page.location] %}
+          <h2>{{ location.name }}, {{ page.date | date_to_string }}</h2>
+        </div>
+      </div>
+      <div class="content">{{ content }}</div>
+    </div>
+  </div>
+  {% include footer.html %}
+</div>
+
+{% include vuejs/home.template.html %}
+{% include vuejs/post-preview.template.html %}
+{% include vuejs/posts.template.html %}
+{% include vuejs/post.template.html %}
+{% include vuejs/geographies.template.html %}
+{% include vuejs/geography.template.html %}
+{% include vuejs/pagination.template.html %}

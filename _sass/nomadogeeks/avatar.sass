@@ -1,0 +1,32 @@
+.avatar
+  border-radius: 2em
+  display: block
+  border: none
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2)
+  background-color: #fff
+
+  &.flag
+    > div
+      width: 60px
+      height: 60px
+      background-size: cover
+      border-radius: 2em
+      background-position: center
+      &::after
+        content: ""
+        width: 60px
+        height: 60px
+        background-image: url(/assets/images/glass-60.png)
+        border-radius: 2em
+        display: block
+
+  img, svg
+    max-width: 100%
+    height: auto
+    border-radius: 2em
+    display: block
+
+  svg
+    path
+      fill: lighten($nomadodark, 10%)
+      stroke: $nomadodark

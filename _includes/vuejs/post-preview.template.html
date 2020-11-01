@@ -1,0 +1,20 @@
+{% raw %}
+<script type="text/x-template" id="post-preview-template">
+  <div>
+    <article class="post-preview container">
+      <a v-bind:href="post.url">
+        <div class="thumbnail">
+          <figure class="image is-2by1"><img v-bind:src="image" /></figure>
+          <div class="description">
+            <h2 v-bind:title="post.title">{{ post.title }}</h2>
+            <br />
+            <p>{{ getLocation(post.location) }}, {{ post.date | formatDate }}</p>
+          </div>
+          <flag-avatar v-bind:location="post.location" class="is-hidden-touch" />
+        </div>
+      </a>
+
+    </article>
+  </div>
+</script>
+{% endraw %}

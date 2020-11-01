@@ -1,0 +1,104 @@
+{
+  "nepal": {
+    "name": "Népal"
+  },
+  "myanmar": {
+    "name": "Myanmar"
+  },
+  "thailand": {
+    "name": "Thaïlande"
+  },
+  "cambodia": {
+    "name": "Cambodge"
+  },
+  "laos": {
+    "name": "Laos"
+  },
+  "vietnam": {
+    "name": "Vietnam"
+  },
+  "malaysia": {
+    "name": "Malaisie"
+  },
+  "australia": {
+    "name": "Australie"
+  },
+  "new-zealand": {
+    "name": "Nouvelle-Zélande"
+  },
+  "peru": {
+    "name": "Pérou"
+  },
+  "argentina": {
+    "name": "Argentine"
+  },
+  "ireland": {
+    "name": "Irlande",
+    "before": true
+  },
+  "tanzania": {
+    "name": "Tanzanie"
+  },
+  "united-states-of-america": {
+    "name": "États-Unis"
+  },
+  "canada": {
+    "name": "Canada"
+  },
+  "kyrgyzstan": {
+    "name": "Kirghizie",
+    "before": true
+  },
+  "united-kingdom": {
+    "name": "Royaume-Uni",
+    "before": true
+  },
+  "mexico": {
+    "name": "Mexique",
+    "before": true
+  },
+  "spain": {
+    "name": "Espagne",
+    "before": true
+  },
+  "portugal": {
+    "name": "Portugal",
+    "before": true
+  },
+  "italy": {
+    "name": "Italie",
+    "before": true
+  },
+  "greece": {
+    "name": "Grèce",
+    "before": true
+  },
+  "austria": {
+    "name": "Autriche",
+    "before": true
+  },
+  "france": {
+    "name": "France",
+    "before": true
+  },
+  "netherlands": {
+    "name": "Pays-Bas",
+    "before": true
+  },
+  "belgium": {
+    "name": "Belgique",
+    "before": true
+  },
+  "switzerland": {
+    "name": "Suisse",
+    "before": true
+  },
+  "luxembourg": {
+    "name": "Luxembourg",
+    "before": true
+  },
+  "singapore": {
+    "name": "Singapour",
+    "before": true
+  }
+}

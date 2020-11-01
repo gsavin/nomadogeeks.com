@@ -1,0 +1,33 @@
+<script type="text/x-template" id="post-template">
+  <div class="post" v-bind:style="image">
+    <div class="header">
+      <h1>{{ post.title }}</h1>
+      <div class="subtitle">
+        <h2>{{ getLocation(post.location) }}, {{ post.date | formatDate }}</h2>
+      </div>
+    </div>
+    <div class="content">
+      <template v-for="item in post.content">
+        <div v-if="item.type === 'image'" class="container">
+          <lazy-image v-bind:url="item.image" v-bind:class="item.class || []" />
+        </div>
+        <template v-else-if="item.type === 'paragraph'">
+          <markdown-renderer v-bind:content="item.content" class="paragraph" v-bind:class="item.class || []" />
+        </template>
+        <div v-else-if="item.type === 'message'" class="container">
+          <article class="message">
+            <markdown-renderer v-bind:content="item.content" class="message-body" v-bind:class="item.class || []" />
+          </article>
+        </div>
+        <div v-else-if="item.type === 'video'" class="container is-centered">
+          <figure class="image video">
+            <yt-video v-bind:video-id="item.video" />
+          </figure>
+        </div>
+        <template v-else>
+          <!-- What's that? -->
+        </template>
+      </template>
+    </div>
+  </div>
+</script>

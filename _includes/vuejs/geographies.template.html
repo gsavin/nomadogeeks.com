@@ -1,0 +1,13 @@
+<script type="text/x-template" id="geographies-template">
+  <div class="geographies">
+    <div>
+      <div>
+        <svg width="100%" class="geo">
+          <g>
+            <geography v-for="geography in geographies" v-bind:geography="geography" v-bind:key="geography.key" />
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</script>

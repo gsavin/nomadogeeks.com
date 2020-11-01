@@ -1,0 +1,25 @@
+.lazy
+  position: relative
+
+  img
+    width: 100%
+    padding-top: 66%
+
+  .spinner
+    background-color: #dbdbdb
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    left: 0
+    height: 100%
+    width: 100%
+
+  .spinner-leave-active
+    transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+  .spinner-leave-to
+    opacity: 0
+
+  &.loaded
+    img
+      padding-top: 0

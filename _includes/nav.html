@@ -1,0 +1,31 @@
+{% raw %}
+<div class="scroll-anchor"></div>
+<nav class="navbar is-fixed-top is-spaced is-dark" role="navigation">
+  <div class="navbar-brand">
+    <router-link to="/" class="logo"><img class="logo" src="/assets/images/logo.png" height="80" width="auto" /></router-link>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="#nomado-menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="nomado-menu" class="navbar-menu">
+    <div class="navbar-start">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <router-link to="/blog" class="navbar-link">Blog</router-link>
+        <div class="navbar-dropdown">
+          <a v-for="location in $root.locationsList" class="navbar-item" v-bind:href="'/blog/' + location.id" v-bind:key="location.id">{{ location.name }}</a>
+        </div>
+      </div>
+      <router-link to="/photos" class="navbar-item">Photos</router-link>
+      <router-link to="/blog" class="navbar-item">Vidéos</router-link>
+      <router-link to="/blog" class="navbar-item">Contact</router-link>
+    </div>
+    <div class="navbar-end">
+      <div class="control is-medium">
+        <input class="input is-medium is-rounded" type="text" placeholder="Rechercher...">
+      </div>
+    </div>
+  </div>
+</nav>
+{% endraw %}

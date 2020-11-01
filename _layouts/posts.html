@@ -1,0 +1,13 @@
+---
+layout: default
+filter:
+---
+<div id="nomadogeeks">
+  {% include nav.html %}
+  <filtered-posts posts-per-page="12" v-bind:posts="posts.data" ref="posts" filter="{{ page.filter }}" />
+  {% include footer.html %}
+</div>
+
+{% include vuejs/post-preview.template.html %}
+{% include vuejs/posts.template.html %}
+{% include vuejs/pagination.template.html %}

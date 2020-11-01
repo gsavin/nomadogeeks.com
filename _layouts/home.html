@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<div id="nomadogeeks">
+  {% include nav.html %}
+  <div class="home">
+    <section class="hero is-medium logo">
+      <div class="hero-body container">
+        <div class="columns is-centered is-multiline">
+          <div class="column is-full">
+            <img src="/assets/images/logo.png" />
+          </div>
+          <div class="column is-full is-hidden-touch">
+            <h3 class="is-primary">Hackons la planête !</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="nomadomap">
+      <geographies />
+    </section>
+    <section class="hero is-light">
+      <h2>Derniers articles</h2>
+      <posts v-bind:posts-per-page="4" v-bind:posts="$root.posts.data"></posts>
+    </section>
+    <section class="see-more">
+      <div class="columns is-centered is-multiline">
+        <div class="column is-narrow"></div>
+      </div>
+    </section>
+  </div>
+  {% include footer.html %}
+</div>
+
+{% include vuejs/post-preview.template.html %}
+{% include vuejs/posts.template.html %}
+{% include vuejs/pagination.template.html %}
+{% include vuejs/geography.template.html %}
+{% include vuejs/geographies.template.html %}
