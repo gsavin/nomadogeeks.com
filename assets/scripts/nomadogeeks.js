@@ -219,14 +219,13 @@ const nomadogeeks = new Vue({
   },
   computed: {
     locationsList: function () {
-      return Object.keys(this.locations.data)
-        .sort()
-        .filter(location => !this.locations.data[location].before)
-        .map(location => ({
-          id: location,
-          name: this.locations.data[location].name,
-          visited: this.locations.data[location].visited
-        }));
+      return Object.entries(this.locations.data)
+        .map(([id, location]) => ({
+          id: id,
+          ...location
+        }))
+        .filter(location => !location.before)
+        .sort((a, b) => a.name.localeCompare(b.name));
     }
   },
   created: function () {
