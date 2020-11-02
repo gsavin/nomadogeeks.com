@@ -2,7 +2,7 @@
 <div class="scroll-anchor"></div>
 <nav class="navbar is-fixed-top is-spaced is-dark" role="navigation">
   <div class="navbar-brand">
-    <router-link to="/" class="logo"><img class="logo" src="/assets/images/logo.png" height="80" width="auto" /></router-link>
+    <a href="/" class="logo"><img class="logo" src="/assets/images/logo.png" height="80" width="auto" /></a>
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="#nomado-menu">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -11,15 +11,16 @@
   </div>
   <div id="nomado-menu" class="navbar-menu">
     <div class="navbar-start">
+      <a href="/hello-world" class="navbar-item{% endraw %}{%if page.url == "/hello-world/" %} is-active{% endif %}{% raw %}">Hello World</a>
       <div class="navbar-item has-dropdown is-hoverable">
-        <router-link to="/blog" class="navbar-link">Blog</router-link>
+        <a href="/blog" class="navbar-link{% endraw %}{%if page.url == "/blog/" %} is-active{% endif %}{% raw %}">Blog</a>
         <div class="navbar-dropdown">
           <a v-for="location in $root.locationsList" class="navbar-item" v-bind:href="'/blog/' + location.id" v-bind:key="location.id">{{ location.name }}</a>
         </div>
       </div>
-      <router-link to="/photos" class="navbar-item">Photos</router-link>
-      <router-link to="/blog" class="navbar-item">Vidéos</router-link>
-      <router-link to="/blog" class="navbar-item">Contact</router-link>
+      <a href="/photos" class="navbar-item">Photos</a>
+      <a href="https://www.youtube.com/channel/UCmWo6UuPMyP9Injo3RQXMDQ/videos" class="navbar-item">Vidéos</a>
+      <a href="#" class="navbar-item">Contact</a>
     </div>
     <div class="navbar-end">
       <div class="control is-medium">
