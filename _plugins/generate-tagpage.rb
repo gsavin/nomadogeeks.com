@@ -20,7 +20,7 @@ module Jekyll
       self.process(@name)
       self.read_yaml(File.join(base, "_layouts"), "posts.html")
       self.data["filter"] = tag
-      self.data["title"] = "nomadoGEEKS | #{tag}"
+      self.data["title"] = site.data["locations"][tag]["name"]
     end
   end
 end

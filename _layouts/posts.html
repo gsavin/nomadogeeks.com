@@ -4,7 +4,7 @@ filter:
 ---
 <div id="nomadogeeks">
   {% include nav.html %}
-  <filtered-posts posts-per-page="12" v-bind:posts="posts.data" ref="posts" filter="{{ page.filter }}" />
+  <filtered-posts posts-per-page="12" v-bind:posts="posts.data" ref="posts" filter="{{ page.filter }}"></filtered-posts>
   {% include footer.html %}
 </div>
 
