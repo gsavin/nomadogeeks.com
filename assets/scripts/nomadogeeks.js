@@ -6,24 +6,7 @@ const dateOptions = {
   day: "numeric"
 };
 
-function markdownFigure (md, config) {
-  md.renderer.rules.image = function (tokens, idx, options, env, self) {
-    config = config || {}
-
-    const token = tokens[idx]
-    const srcIndex = token.attrIndex('src')
-    const url = token.attrs[srcIndex][1]
-    const caption = md.utils.escapeHtml(token.content)
-
-    return '<figure class="image">' +
-        '<img src="' + url + '" alt="' + caption + '" title="' + caption + '">' +
-      '</figure>'
-  }
-}
-
 const dateFormater = new Intl.DateTimeFormat("fr-FR", dateOptions);
-/*const parser = new window.markdownit();
-parser.use(markdownFigure);*/
 
 Vue.filter('formatDate', function(value) {
   if (value) {
@@ -135,71 +118,11 @@ Vue.component("yt-video", {
 })
 
 //
-// Routes
-//
-
-const Home = {
-  template: "#home-template"
-}
-
-const PostsView = {
-  computed: {
-    posts: function () {
-      const location = this.$route.params.location;
-      let posts = this.$root.posts.data;
-
-      if (location) {
-        posts = posts.filter(post => post.location === location);
-      }
-
-      return posts;
-    }
-  },
-  template: '<posts postsPerPage="10" v-bind:posts="posts" ref="posts" />'
-}
-
-const PostView = {
-  computed: {
-    postId: function () {
-      const params = this.$route.params;
-      return params.year + "-" + params.month + "-" + params.day + "-" + params.name;
-    }
-  },
-  template: "<post v-bind:postId='postId' />"
-}
-
-const routes = [{
-  path: "/",
-  component: Home
-}, {
-  path: "/blog/:location?",
-  component: PostsView
-}, {
-  path: "/:year(\\d+)/:month/:day/:name",
-  component: PostView
-}]
-
-const router = new VueRouter({
-  mode: "history",
-  routes
-})
-
-router.afterEach(function (to, from,) {
-  document.querySelector("#nomadogeeks > .scroll-anchor").scrollIntoView({
-    block: "start",
-    inline: "nearest",
-    behavior: "smooth"
-  });
-})
-
-
-//
 // Main Vue
 //
 
 const nomadogeeks = new Vue({
   el: '#nomadogeeks',
-  router,
   data: {
     authors: {
       error: null,
@@ -215,7 +138,8 @@ const nomadogeeks = new Vue({
       error: null,
       loading: false,
       data: []
-    }
+    },
+    menuOpened: false
   },
   computed: {
     locationsList: function () {
@@ -233,6 +157,11 @@ const nomadogeeks = new Vue({
     fetchData(this.locations, "locations");
     /*fetchData(this.authors, "authors");
     fetchData(this.geojson, "geojson", prepareGeoData)*/
+  },
+  methods: {
+    burgerToggled: function () {
+      this.menuOpened = !this.menuOpened;
+    }
   },
   provide: function () {
     return {
