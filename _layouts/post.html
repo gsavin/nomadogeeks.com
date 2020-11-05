@@ -9,7 +9,7 @@ layout: default
         <h1>{{ page.title }}</h1>
         <div class="subtitle">
           {% assign location = site.data.locations[page.location] %}
-          <h2>{{ location.name }}, {{ page.date | date_to_string }}</h2>
+          <h2>{{ location.name }}, <formatted-date date="{{ page.date | date_to_xmlschema }}"></formatted-date></h2>
         </div>
       </div>
       <div class="content">{{ content }}</div>

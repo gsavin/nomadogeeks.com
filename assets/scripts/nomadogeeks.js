@@ -19,6 +19,11 @@ Vue.filter('formatDate', function(value) {
 // Components
 //
 
+Vue.component("formatted-date", {
+  props: ["date"],
+  template: "<span>{{ date | formatDate }}</span>"
+})
+
 Vue.component('avatar', {
   props: ["avatar"],
   template: '<div class="avatar"><img v-bind:src="avatar.src" v-bind:srcset="avatar.srcset" width="60" height="60" /></div>'
