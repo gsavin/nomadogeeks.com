@@ -52,7 +52,7 @@
         &::after
           width: 100px
 
-    p, figure
+    p, figure, .paragraph
       max-width: 960px
       margin: 2em auto
 
@@ -68,3 +68,28 @@
 
       img
         vertical-align: top
+
+    .previous-post
+      background-color: #f8f8f8
+      display: flex
+      flex-direction: row
+
+      img
+        flex-grow: 0
+        width: 8em
+        margin-right: 0.5em
+
+      > span
+        flex-grow: 1
+        margin: auto
+        padding: 0.5em
+        display: flex
+        flex-direction: column-reverse
+
+        .title
+          margin-bottom: 0
+          font-size: 1.5rem
+
+        .hint
+          font-size: 80%
+          font-weight: lighter

@@ -6,9 +6,8 @@ author: "gsavin"
 date: "2020-10-26 16:22:19"
 tags: canada
 permalink: /2020/10/26/le-large-canadien/
+start_with: /2020/10/11/premiers-pas-au-canada/
 ---
-[Retrouvez le début de l'aventure canadienne ici](/2020/10/11/premiers-pas-au-canada/)
-
 Durant notre roadtrip sur l'île de Vancouver, nous avons eu l'occasion de faire de excursion en mer. La première au départ de Ucluelet, sur la côte ouest. La seconde au départ de Campbell River, sur la côte est.
 
 Ucluelet donne directement sur le Pacifique, et les eaux donnent l'impression d'être plus sauvage que de l'autre côté de l'île. Nous partîmes donc une après midi en mer dans l'espoir de voir des baleines (principalement, mais tout membre de la faune marine était bien entendu le bienvenu) dans le bateau de Cameroun, l'organisateur de l'excursion qui s'est révélé très sympathique et passionné. La sortie était prévu pour un groupe d'une dizaine de personnes, mais nous étions les seuls.

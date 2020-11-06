@@ -6,9 +6,8 @@ author: "gsavin"
 date: "2020-10-25 16:22:19"
 tags: canada
 permalink: /2020/10/25/vancouver-island/
+start_with: /2020/10/11/premiers-pas-au-canada/
 ---
-[Retrouvez le début de l'aventure canadienne ici](/2020/10/11/premiers-pas-au-canada/)
-
 Après notre visite de Vancouver, nous prenons le ferry pour traverser le détroit de Georgia en direction de Nanaimo. Une météo bienveillante nous permet de profiter du pont supérieur pour admirer le paysage qui s'offre à nous, parsemé de petites îles verdoyantes.
 
 {% include image.html src="2020/10/25/vancouver-island/1.jpg" %}

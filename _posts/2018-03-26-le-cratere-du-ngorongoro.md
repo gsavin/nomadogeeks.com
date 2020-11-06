@@ -6,9 +6,8 @@ author: "gsavin"
 date: "2018-03-26 16:22:19"
 tags: tanzania
 permalink: /2018/03/26/le-cratere-du-ngorongoro/
+start_with: /2018/01/14/debut-du-safari-a-manyara/
 ---
-[Retrouvez le début de l'aventure ici](/2018/01/14/debut-du-safari-a-manyara)
-
 Au petit matin, Solenne mal réveillée marche sur un petit serpent qui dormait paisiblement dans la salle de bain. La pauvre bête terrorisée s'enfuit sans demander son reste, "Agréable mais colocataires sans savoir vivre" pourra-t-on lire plus tard dans les commentaires.
 
 Nous reprenons la route vers l'étape du jour de notre safari, le cratère de Ngorongoro. Le nom du cratère vient probablement du bruit des cloches des vaches qui y paissaient autrefois. La taille du cratère lui-même est identique à celle du parc de Manyara. Cependant, ce cratère n'est qu'une petite partie du parc du Ngorongoro dont la superficie totale est de 8288km². Contrairement au parc de Manyara, Ngorongoro est une "aire de conservation", qui est unique en Tanzanie du fait qu'elle autorise des humains à y vivre. Uniquement les maasaïs car ils ne vivent que de leur troupeau et ne pratiquent ni agriculture, ni chasse. Cependant, il ne leur est pas permis de vivre dans le parc de Serengenti au nord, ce qui a conduit à un exode de la population vers Ngorongoro il y a plusieurs décades, conduisant à une démographie au sein du parc trop importante qui a elle même conduit à durcir les règles concernant l'habitation du Ngorongoro.

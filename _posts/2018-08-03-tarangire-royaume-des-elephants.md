@@ -6,9 +6,8 @@ author: "gsavin"
 date: "2018-08-03 16:22:19"
 tags: tanzania
 permalink: /2018/08/03/tarangire-royaume-des-elephants/
+start_with: /2018/01/14/debut-du-safari-a-manyara/
 ---
-[Retrouvez le début de l'aventure ici](/2018/01/14/debut-du-safari-a-manyara/)
-
 Le troisième jour de notre escapade dans le bush africain commence, et c'est au parc de Tarangire que nous nous rendons cette fois pour y passer nos deux derniers jours de safari. Bien qu'il ne soit pas aussi grand que sa voisine, l'aire de conservation du Ngorongoro, les 2850km² qu'il couvre fait de lui le sixième plus grand parc de Tanzanie... Pour l'anecdote, le nom Tarangire proviendrait du nom de la rivière qui coule dans le parc, lui même issu d'un mot de la langue des Wambugwe signifiant sinueux.
 
 {% include image.html src="2018/08/03/tarangire-royaume-des-elephants/1.jpg" %}
