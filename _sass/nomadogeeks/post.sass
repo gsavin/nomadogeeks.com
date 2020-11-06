@@ -37,6 +37,20 @@
     background-color: white
     padding: 0.5em
     padding-top: 2em
+    position: relative
+
+    .flag
+      position: absolute
+      left: 50%
+      top: 0
+      transform: translate(-50%, -50%)
+      padding: 4px
+
+      > div
+        width: 100px
+
+        &::after
+          width: 100px
 
     p, figure
       max-width: 960px

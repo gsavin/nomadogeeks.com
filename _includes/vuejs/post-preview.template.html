@@ -10,7 +10,7 @@
             <br />
             <p>{{ getLocation(post.location) }}, {{ post.date | formatDate }}</p>
           </div>
-          <flag-avatar v-bind:location="post.location" class="is-hidden-touch" />
+          <flag v-bind:location="post.location" class="is-hidden-touch"></flag>
         </div>
       </a>
 

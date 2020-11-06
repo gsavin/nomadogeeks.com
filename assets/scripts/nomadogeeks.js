@@ -29,7 +29,7 @@ Vue.component('avatar', {
   template: '<div class="avatar"><img v-bind:src="avatar.src" v-bind:srcset="avatar.srcset" width="60" height="60" /></div>'
 })
 
-Vue.component('flag-avatar', {
+Vue.component('flag', {
   props: ["location"],
   computed: {
     background: function () {
