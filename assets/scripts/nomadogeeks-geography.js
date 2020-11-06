@@ -62,29 +62,6 @@ Vue.component("geography", {
   template: "#geography-template"
 })
 
-Vue.component("geoavatar", {
-  props: ["location"],
-  computed: {
-    path: function () {
-      const f = this.getCountryFeature(this.location);
-      const p = d3.geoMercator()
-        .fitExtent([[5, 5], [55, 55]], f)
-        .rotate([-11, 0]);
-
-      return d3.geoPath(p)(f.features[0]);
-    }
-  },
-  methods: {
-    getCountryFeature: function(location) {
-      return {
-        type: "FeatureCollection",
-        features: this.geojson.data.features.filter(feature => feature.properties.id === location)
-      };
-    }
-  },
-  template: '<div class="avatar"><svg class="geo" width="60" height="60"><path v-bind:d="path" /></svg>'
-})
-
 function prepareGeoData(data) {
   const geojson = topojson.feature(data, data.objects[Object.keys(data.objects)[0]]);
   geojson.features = geojson.features
