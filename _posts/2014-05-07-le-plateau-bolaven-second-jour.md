@@ -6,6 +6,7 @@ author: "gsavin"
 date: "2014-05-07 00:12:09"
 tags: laos
 permalink: /2014/05/07/le-plateau-bolaven-second-jour/
+start_with: /2014/05/06/le-plateau-bolaven-premier-jour/
 ---
 Nous passons une très bonne nuit chez notre hôte. Petit café le matin bien sûr, le tout servit avec bananes et cacahuètes (Mathieu !!) localement produites ! Les alentours sont humides suite à la pluie, mais le soleil levant promet déjà de réchauffer les cœurs.
 

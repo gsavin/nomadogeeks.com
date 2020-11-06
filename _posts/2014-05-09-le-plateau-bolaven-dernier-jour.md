@@ -6,6 +6,7 @@ author: "gsavin"
 date: "2014-05-09 08:10:15"
 tags: laos
 permalink: /2014/05/09/le-plateau-bolaven-dernier-jour/
+start_with: /2014/05/08/le-plateau-bolaven-troisieme-jour/
 ---
 Dernier jour sur le plateau ! Au réveil, nous pouvons entendre la pluie qui bât son plein. Problème : il faut remonter le chemin en terre et faire un long morceau de piste. On profite de l'arrêt de la pluie pour s'en aller... Solenne doit monter la première partie à pied, l'arrière du scooter n'arrête pas de chasser ! La prochaine fois on prendra une trail ;) Le reste de la piste se passe plutôt bien.
 

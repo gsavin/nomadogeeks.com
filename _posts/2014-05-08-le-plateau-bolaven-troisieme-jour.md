@@ -6,6 +6,7 @@ author: "gsavin"
 date: "2014-05-08 10:48:48"
 tags: laos
 permalink: /2014/05/08/le-plateau-bolaven-troisieme-jour/
+start_with: /2014/05/07/le-plateau-bolaven-second-jour/
 ---
 Troisième jour sur le plateau, nous quittons Tad Lo pour continuer notre grande boucle.
 
