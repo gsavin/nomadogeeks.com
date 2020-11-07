@@ -16,7 +16,7 @@ Vue.component("filtered-posts", {
 Vue.component('posts', {
   data () {
     return {
-      page: 0
+      page: (window.history.state || {}).page || 0
     }
   },
   props: ["posts", "postsPerPage"],
@@ -26,8 +26,9 @@ Vue.component('posts', {
         return [];
       }
 
-      const start = Math.min(this.page * this.postsPerPage, this.posts.length - 1);
-      const end = Math.min((this.page + 1) * this.postsPerPage, this.posts.length);
+      const p = Math.min(this.page, this.totalPages - 1);
+      const start = Math.min(p * this.postsPerPage, this.posts.length - 1);
+      const end = Math.min((p + 1) * this.postsPerPage, this.posts.length);
 
       return this.posts.slice(start, end);
     },
@@ -35,17 +36,27 @@ Vue.component('posts', {
       return Math.ceil(this.posts.length / this.postsPerPage);
     }
   },
+  created: function () {
+    window.addEventListener("popstate", (e) => {
+      if (window.history.state && window.history.state.page) {
+        this.goTo(window.history.state.page, true);
+      } else {
+        this.goTo(0, true);
+      }
+    });
+  },
   methods: {
     next () {
-      this.page = Math.min(this.page + 1, this.totalPages - 1);
-      this.scrollToTop();
+      this.goTo(Math.min(this.page + 1, this.totalPages - 1));
     },
     previous () {
-      this.page = Math.max(this.page - 1, 0);
-      this.scrollToTop();
+      this.goTo(Math.max(this.page - 1, 0));
     },
-    goTo (page) {
+    goTo (page, noPush) {
       this.page = page;
+      if (!noPush) {
+        window.history.pushState({page: this.page}, "Page " + this.page);
+      }
       this.scrollToTop();
     },
     scrollToTop () {
