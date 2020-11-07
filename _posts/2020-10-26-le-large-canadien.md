@@ -6,7 +6,7 @@ author: "gsavin"
 date: "2020-10-26 16:22:19"
 tags: canada
 permalink: /2020/10/26/le-large-canadien/
-start_with: /2020/10/11/premiers-pas-au-canada/
+start_with: /2020/10/25/vancouver-island/
 ---
 Durant notre roadtrip sur l'île de Vancouver, nous avons eu l'occasion de faire de excursion en mer. La première au départ de Ucluelet, sur la côte ouest. La seconde au départ de Campbell River, sur la côte est.
 

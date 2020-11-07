@@ -14,8 +14,10 @@ layout: default
       </div>
       <div class="content">
         <flag location="{{ page.location }}"></flag>
-        {% if page.start_with %}{% include previous-post.html %}{% endif %}
-        {{ content }}
+        <div class="content-wrapper">
+          {% if page.start_with %}{% include previous-post.html %}{% endif %}
+          {{ content }}
+        </div>
       </div>
     </div>
   </div>
