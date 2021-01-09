@@ -100,5 +100,13 @@
   "singapore": {
     "name": "Singapour",
     "before": true
+  },
+  "iceland": {
+    "name": "Iceland",
+    "before": true
+  },
+  "sweden": {
+    "name": "Sweden",
+    "before": true
   }
 }
