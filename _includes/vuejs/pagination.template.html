@@ -4,7 +4,7 @@
       <a class="pagination-previous" v-on:click="$parent.previous()">Précédente</a>
       <a class="pagination-next" v-on:click="$parent.next()">Suivante</a>
       <ul class="pagination-list">
-        <li><a class="pagination-link" aria-label="Goto page 1" v-if="page > 1" v-on:click="$parent.goTo(1)">1</a></li>
+        <li><a class="pagination-link" aria-label="Goto page 1" v-if="page > 1" v-on:click="$parent.goTo(0)">1</a></li>
         <li><span class="pagination-ellipsis" v-if="page > 2">&hellip;</span></li>
         <li><a class="pagination-link" aria-label="Goto page 45" v-if="page > 0" v-on:click="$parent.goTo(page - 1)">{{ page }}</a></li>
         <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">{{ page + 1 }}</a></li>
