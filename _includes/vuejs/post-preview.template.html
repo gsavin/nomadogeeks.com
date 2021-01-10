@@ -1,8 +1,8 @@
 {% raw %}
 <script type="text/x-template" id="post-preview-template">
-  <div>
+  <div class="post-preview">
     <transition name="post-preview-animator" mode="out-in"><div class="animator" v-bind:key="post.id"></div></transition>
-    <article class="post-preview container">
+    <article class="container">
       <a v-bind:href="post.url">
         <div class="thumbnail">
           <figure class="image is-2by1"><img v-bind:src="image" /></figure>

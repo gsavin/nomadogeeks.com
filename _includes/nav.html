@@ -23,9 +23,7 @@
       <a href="mailto:{% endraw %}{{ site.email }}{% raw %}" class="navbar-item">Contact</a>
     </div>
     <div class="navbar-end">
-      <div class="control is-medium">
-        <input class="input is-medium is-rounded" type="text" placeholder="Rechercher...">
-      </div>
+      <search v-bind:index="searchIndex" v-bind:posts="posts.data"></search>
     </div>
   </div>
 </nav>

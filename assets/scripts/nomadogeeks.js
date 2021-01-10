@@ -1,4 +1,4 @@
-import { fetchData } from "./nomadogeeks-common.js";
+import { fetchData, loadSearchIndex } from "./nomadogeeks-common.js";
 
 const dateOptions = {
   year: "numeric",
@@ -122,6 +122,30 @@ Vue.component("yt-video", {
   template: '<iframe width="640" height="385" v-bind:src="src" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
 })
 
+Vue.component("search", {
+  props: ["index", "posts"],
+  data: function () {
+    return {
+      query: "",
+      show: false
+    }
+  },
+  computed: {
+    results: function () {
+      if (!this.index || !this.query) {
+        this.show = false;
+        return [];
+      }
+
+      console.log("Computing results from", this.query);
+
+      return this.index.search(this.query)
+        .map((doc) => this.posts.find((post) => post.id == doc.ref));
+    }
+  },
+  template: '#search-template'
+});
+
 //
 // Main Vue
 //
@@ -144,7 +168,8 @@ const nomadogeeks = new Vue({
       loading: false,
       data: []
     },
-    menuOpened: false
+    menuOpened: false,
+    searchIndex: null
   },
   computed: {
     locationsList: function () {
@@ -158,8 +183,13 @@ const nomadogeeks = new Vue({
     }
   },
   created: function () {
-    fetchData(this.posts, "posts");
-    fetchData(this.locations, "locations");
+    Promise.all([
+      fetchData(this.posts, "posts"),
+      fetchData(this.locations, "locations")
+    ]).then(() => {
+      this.searchIndex = loadSearchIndex(this.posts.data, this.locations.data);
+      window.searchIndex = this.searchIndex;
+    });
     /*fetchData(this.authors, "authors");
     fetchData(this.geojson, "geojson", prepareGeoData)*/
   },

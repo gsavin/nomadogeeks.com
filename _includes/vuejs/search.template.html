@@ -1,0 +1,12 @@
+{% raw %}
+<script type="text/x-template" id="search-template">
+  <div class="search control is-medium">
+    <input class="input is-medium is-rounded" type="search"  v-model="query" placeholder="Rechercher..." v-on:input="show = true">
+    <section v-if="show" class="hero is-light results">
+      <h2 v-if="results.length > 0">Résultats pour "{{ query }}"</h2>
+      <h2 v-if="results.length == 0">Aucun résultat trouvé.</h2>
+      <posts v-if="results.length > 0" v-bind:posts="results" posts-per-page="4"></posts>
+    </div>
+  </div>
+</script>
+{% endraw %}

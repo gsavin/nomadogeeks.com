@@ -107,6 +107,8 @@ nav.is-dark input
   border-color: rgba(0, 0, 0, 0.2)
   &:hover
     border-color: rgba(0, 0, 0, 0.5)
+  &::placeholder
+    color: gray
 
 /* Fix for dropdown that does not disappear. */
 .navbar-item.is-hoverable
@@ -114,3 +116,11 @@ nav.is-dark input
     display: block !important
   &:focus-within .navbar-dropdown
     display: none
+
+.search
+  .results
+    top: 100%
+    left: 0
+    right: 0
+    background: rgba(255, 255, 255, 0.75)
+    position: absolute

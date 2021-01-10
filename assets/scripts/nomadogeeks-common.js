@@ -93,3 +93,36 @@ export function fetchData (store, key, transform) {
     }
   })
 }
+
+export function loadSearchIndex(posts, locations) {
+  const existingData = loadFromStorage("search-index");
+
+  if (existingData) {
+    return lunr.Index.load(existingData);
+  }
+
+  console.debug("Computing search index");
+
+  const index = lunr(function() {
+    this.use(lunr.fr);
+    this.field("title", { boost: 10 });
+    this.field("location");
+    posts.forEach((doc) => {
+      let location = locations[doc["location"]];
+      let docLocations = [doc["location"]];
+
+      if (location && location.name) {
+        docLocations.push(location.name);
+      }
+
+      this.add({
+        id: doc["id"],
+        title: doc["title"],
+        location: docLocations
+      });
+    });
+  });
+
+  storeData("search-index", index);
+  return index;
+}

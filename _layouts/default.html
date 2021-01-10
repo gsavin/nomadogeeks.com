@@ -14,6 +14,9 @@
     <script src="/assets/scripts/vue.min.js"></script>
     <script src="https://d3js.org/d3-array.v1.min.js"></script>
     <script src="/assets/scripts/d3-geo.min.js"></script>
+    <script src="/assets/scripts/lunr.min.js" integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"></script>
+    <script src="/assets/scripts/lunr.stemmer.support.min.js" integrity="sha384-CFcSLk9XKMzleU33zn2y3to/x2EtJeQBkoqdpEwyCFaAn8MwSCs4g0EXnk/fhHE1"></script>
+    <script src="/assets/scripts/lunr.fr.min.js" integrity="sha384-PXyJSkgW+9Mpxf16y0mVchGIzQ5q+ObmqCLaAmoWUz40YXgPxqW/eF85mP4R2ewm"></script>
     <!--<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>-->
     <script src="/assets/scripts/topojson.min.js"></script>
     <script src="/assets/scripts/nomadogeeks-common.js" type="module"></script>
@@ -23,5 +26,6 @@
     <script src="/assets/scripts/nomadogeeks.js" type="module"></script>
     <div class="vspacer is-hidden-touch"></div>
     {{ content }}
+    {% include vuejs/search.template.html %}
   </body>
 </html>
