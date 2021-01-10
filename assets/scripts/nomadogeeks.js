@@ -137,9 +137,7 @@ Vue.component("search", {
         return [];
       }
 
-      console.log("Computing results from", this.query);
-
-      return this.index.search(this.query)
+      return this.index().search(this.query)
         .map((doc) => this.posts.find((post) => post.id == doc.ref));
     }
   },
@@ -187,11 +185,14 @@ const nomadogeeks = new Vue({
       fetchData(this.posts, "posts"),
       fetchData(this.locations, "locations")
     ]).then(() => {
-      this.searchIndex = loadSearchIndex(this.posts.data, this.locations.data);
-      window.searchIndex = this.searchIndex;
+      let searchIndex = null;
+      this.searchIndex = () => {
+        if (!searchIndex) {
+          searchIndex = loadSearchIndex(this.posts.data, this.locations.data);
+        }
+        return searchIndex;
+      };
     });
-    /*fetchData(this.authors, "authors");
-    fetchData(this.geojson, "geojson", prepareGeoData)*/
   },
   methods: {
     burgerToggled: function () {

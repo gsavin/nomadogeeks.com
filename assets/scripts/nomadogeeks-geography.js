@@ -46,7 +46,7 @@ Vue.component("geography", {
   inject: ["hasLocation", "isLocationBefore"],
   computed: {
     isBefore: function () {
-      return this.isLocationBefore(this.geography.key)
+      return this.isLocationBefore(this.geography.key);
     },
     isVisited: function () {
       return this.hasLocation(this.geography.key);
