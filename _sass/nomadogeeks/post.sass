@@ -56,9 +56,38 @@
         &::after
           width: 100px
 
-    p, figure, ul, .paragraph
+    p, figure, ul, .paragraph, blockquote
       max-width: 960px
       margin: 2em auto
+
+    .conversation
+      font-style: italic
+      position: relative
+      ul
+        list-style-type: '-'
+      li
+        padding-left: .2em
+        margin-top: 0
+      &::before
+        position: absolute
+        display: block
+        content: ""
+        left: .5em
+        top: .5em
+        background: url(/assets/images/quote-open.svg) no-repeat
+        background-size: contain
+        width: 2em
+        height: 2em
+      &::after
+        position: absolute
+        display: block
+        content: ""
+        right: .5em
+        bottom: .5em
+        background: url(/assets/images/quote-close.svg) no-repeat
+        background-size: contain
+        width: 2em
+        height: 2em
 
     figure
       &::before
