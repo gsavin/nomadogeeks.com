@@ -116,10 +116,11 @@ Vue.component("yt-video", {
   props: ["videoId"],
   computed: {
     src: function () {
+      console.log(this.videoId);
       return `https://www.youtube.com/embed/${this.videoId}`;
     }
   },
-  template: '<iframe width="640" height="385" v-bind:src="src" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+  template: '<figure class="video"><iframe v-bind:src="src" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></figure>'
 })
 
 Vue.component("search", {
