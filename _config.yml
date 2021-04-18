@@ -21,9 +21,7 @@
 title: nomadoGEEKS | hackons la planète !
 email: contact@nomadogeeks.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Un blog racontant nos voyages à travers le monde.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 youtube_channel: https://www.youtube.com/channel/UCmWo6UuPMyP9Injo3RQXMDQ/videos
@@ -44,7 +42,8 @@ sass:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
+exclude:
+  - tools/
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
