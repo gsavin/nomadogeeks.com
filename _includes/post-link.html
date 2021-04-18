@@ -1,0 +1,8 @@
+{% assign linked_post = site.posts | where: "permalink", include.post | first %}
+<a class="post-link paragraph" href="{{ include.post }}">
+  <img src="/assets/images{{ include.post }}/preview.jpg" class="is-hidden-touch" />
+  <span>
+    <span class="title">{{ linked_post.title }}</span>
+    <span class="hint">{{ include.hint }}</span>
+  </span>
+</a>

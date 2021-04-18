@@ -1,8 +1,0 @@
-{% assign previous_post = site.posts | where: "permalink", page.start_with | first %}
-<a class="previous-post paragraph" href="{{ page.start_with }}">
-  <img src="/assets/images{{ page.start_with }}/preview.jpg" class="is-hidden-touch" />
-  <span>
-    <span class="title">{{ previous_post.title }}</span>
-    <span class="hint">Retrouver le début de l'aventure ici.</span>
-  </span>
-</a>

@@ -15,8 +15,13 @@ layout: default
       <div class="content">
         <flag location="{{ page.location }}"></flag>
         <div class="content-wrapper">
-          {% if page.start_with %}{% include previous-post.html %}{% endif %}
+          {% if page.start_with %}
+          {% include post-link.html post=page.start_with hint="Retrouver le début de l'aventure ici." %}
+          {% endif %}
           {{ content }}
+          {% if page.continue_with %}
+          {% include post-link.html post=page.continue_with hint="Continuer l'aventure ici." %}
+          {% endif %}
         </div>
       </div>
     </div>

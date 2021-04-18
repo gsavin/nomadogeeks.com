@@ -6,6 +6,7 @@ author: "gsavin"
 date: "2019-05-26 16:22:19"
 tags: canada
 permalink: /2019/05/26/premiers-pas-au-canada/
+continue_with: /2019/05/28/vancouver-island/
 ---
 Le Canada... Enfin ! C'est la Colombie-Britannique qui accueille nos premiers pas dans ce pays, et qui nous hébergera pour une quinzaine de jours.  Une destination dans nos têtes depuis un petit moment déjà, particulièrement Vancouver où nous avons atterri. Trop longtemps peut être, trop de temps laisser à l'esprit pour se construire une image toute prête de ce que nous allions trouver. C'est pourtant un travers que nous avions réussi à mettre de côté, mais l’excitation liée à la possible découverte d'un eldorado pour vivre rend l'exercice compliqué.
 

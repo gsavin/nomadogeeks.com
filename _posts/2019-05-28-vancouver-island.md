@@ -7,6 +7,7 @@ date: "2019-05-28 16:22:19"
 tags: canada
 permalink: /2019/05/28/vancouver-island/
 start_with: /2019/05/26/premiers-pas-au-canada/
+continue_with: /2019/06/01/le-large-canadien/
 ---
 Après notre visite de Vancouver, nous prenons le ferry pour traverser le détroit de Georgia en direction de Nanaimo. Une météo bienveillante nous permet de profiter du pont supérieur pour admirer le paysage qui s'offre à nous, parsemé de petites îles verdoyantes.
 
