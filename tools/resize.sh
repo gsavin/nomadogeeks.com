@@ -2,6 +2,7 @@
 
 WATERMARK=$(dirname $0)/watermark.png
 OPTS="-quality 85"
+IMAGE_HEIGHT=${IMAGE_HEIGHT:-1024}
 
 for img in $* ; do
 	width=`convert $img -ping -format "%w" info:`
@@ -9,9 +10,9 @@ for img in $* ; do
 	echo "${img}:${width}x${height}"
 
 	if [ $width -lt $height ]; then
-		resize='1024x'
+		resize="${IMAGE_HEIGHT}x"
 	else
-		resize='x1024'
+		resize="x${IMAGE_HEIGHT}"
 	fi
 
 	final=`basename $img`
