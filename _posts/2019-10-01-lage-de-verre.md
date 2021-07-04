@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "L'age de glace"
+title: "L'age de verre"
 location: "iceland"
 author: "gsavin"
 date: "2019-10-01 16:22:19"
 tags: iceland
 permalink: /2019/10/01/lage-de-verre/
+continue_with: /2019/10/10/la-route-des-cascades-et-glaciers/
 ---
 
 Lors de notre précédent voyage, alors que nous approchions de la moitié du trajet, les vitres étaient rendues opaques pour tromper nos esprits et leur faire croire à un semblant de nuit. Certains cependant, insensible à la duperie, continuaient de guetter au travers de la faible transparence de la fenêtre n'importe quelle surprise qui seraient prête à surgir.
@@ -21,7 +22,7 @@ Une petite note avant d'aller plus loin. L'Islande se situe au sud du cercle pol
 
 Différents facteurs entre en jeu pour la probabilité d'observer une Aurore : la latitude, le plus proche du pôle le meilleur ; l'activité solaire, dont l'impact électromagnétique se retrouve dans l'indice Kp (plus cet indice augmente, plus vos chances d'observation augmentent aussi) ; et enfin, il faut qu'il fasse un peu de nuit pour nous permettre de les apercevoir ! Et ce dernier point est la raison principale d'avoir choisi de voyager un peu plus tard dans l'année.
 
-Fermons cette parenthèse technique, et retournons à Akranes où la nuit est tombée. Le froid aussi même s'il reste sec et agréable pour qui n'est pas frileux. Nous sommes installés à l'arrière de notre van à observer le ciel au travers de fenêtres recouvertes d'un début d'humidité. Un halo blanc semble éclairer le ciel par endroits. Mais quelle est sa source ? En y regardant de plus près, il s'agit plutôt de voiles qui semblent danser dans le ciel : nous sommes en train d'observer une aurore boréale pour la première fois. Son intensité est faible, expliquant pourquoi elle apparaît plutôt blanche, mais elle n'arrive pas à dissimuler aussi facilement à l'objectif d'un appareil photo. Ce ballet féerique continue à se dérouler sous nos yeux hypnotisés. La plupart de nos congénères présents sur le camping sont aussi sous le charme de ce spectacle magnétique.  Difficile d'évaluer le temps passer à admirer, mais au bout d'un moment l'intensité diminue, et l'humidité nous rattrape finalement marquant la fin de cette soirée inoubliable.
+Fermons cette parenthèse technique, et retournons à Akranes où la nuit est tombée. Le froid aussi même s'il reste sec et agréable pour qui n'est pas frileux. Nous sommes installés à l'arrière de notre van à observer le ciel au travers de fenêtres recouvertes d'un début d'humidité. Un halo blanc semble éclairer le ciel par endroits. Mais quelle est sa source ? En y regardant de plus près, il s'agit plutôt de voiles qui semblent danser dans le ciel : nous sommes en train d'observer une aurore boréale pour la première fois. Son intensité est faible, expliquant pourquoi elle apparaît plutôt blanche, mais elle n'arrive pas à dissimuler aussi facilement à l'objectif d'un appareil photo. Ce ballet féerique continue à se dérouler sous nos yeux hypnotisés. La plupart de nos congénères présents sur le camping sont aussi sous le charme de ce spectacle magnétique.  Difficile d'évaluer le temps passé à admirer, mais au bout d'un moment l'intensité diminue, et l'humidité nous rattrape finalement marquant la fin de cette soirée inoubliable.
 
 {% include image.html src="2019/10/01/lage-de-verre/2021-04-18-P1030513.jpg" %}
 {% include image.html src="2019/10/01/lage-de-verre/2021-04-18-P1030518.jpg" %}
@@ -51,5 +52,3 @@ Le lendemain nous passons au point le plus au nord de notre voyage, à 66°N, ch
 {% include image.html src="2019/10/01/lage-de-verre/2021-04-09-C7D_6487.jpg" %}
 {% include image.html src="2019/10/01/lage-de-verre/2021-04-09-C7D_6490.jpg" %}
 {% include image.html src="2019/10/01/lage-de-verre/2021-04-09-C7D_6493.jpg" %}
-
-Suite de l'aventure dans le prochain article.
