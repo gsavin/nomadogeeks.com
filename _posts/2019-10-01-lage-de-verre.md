@@ -34,10 +34,16 @@ Le lendemain, nous reprenons notre route en direction du nord, et nous rencontro
 {% include youtube.html video="ccxDxf-uBx4" %}
 {% include youtube.html video="ziZoiMHzuQ8" %}
 
-Le ciel de cette nouvelle soirée sera calme cette fois. Contrairement à celui de la nuit suivante, alors que nous campions à Hvammstangi. La route avait été agréable, pas de cascade à déclarer, mais des petites villes agréables offrant des pâtisseries réconfortantes déguster sur les quais du port sous l’œil vigilant d'oiseaux inconnus. Autour du camping, une petite ballade alors que le soleil tombe, éclairant d'une lueur orangée les chevaux islandais vivant aux alentours.
+Le ciel de cette nouvelle soirée sera calme cette fois, la nuit fraîche. Alors que nous continuons notre périple le lendemain, nous croisons la célèbre chute d'eau Kirkjufellsfoss surveillée de prêt par le Mont Kirkjufell.
+
+{% include image.html src="2019/10/01/lage-de-verre/2021-04-09-P1030613.jpg" %}
+
+Contrairement à la nuit précédente, cette nouvelle nuit sous le ciel islandais se révèle plus agitée. La route nous avait amenés jusqu'au camping de Hvammstangi, en croisant au fil des kilomètres de petites villes agréables offrant des pâtisseries réconfortantes dégustées sur les quais du port sous l’œil vigilant d'oiseaux inconnus. Autour du camping, une petite ballade alors que le soleil tombe, éclairant d'une lueur orangée les chevaux islandais vivant aux alentours.
 
 {% include image.html src="2019/10/01/lage-de-verre/2021-04-09-C7D_6429.jpg" %}
 {% include image.html src="2019/10/01/lage-de-verre/2021-04-09-C7D_6461.jpg" %}
+{% include image.html src="2019/10/01/lage-de-verre/2021-04-09-P1030707.jpg" %}
+{% include image.html src="2019/10/01/lage-de-verre/2021-04-09-P1030731.jpg" %}
 
 Et le soir donc, les ébats du soleil avec notre magnétosphère reprirent ce soir là, pour un nouveau spectacle inoubliable. L'intensité était cette fois un peu plus forte, permettant d'observer les voiles se mouvant sur la voute céleste plus facilement que la première fois.
 
@@ -46,8 +52,13 @@ Et le soir donc, les ébats du soleil avec notre magnétosphère reprirent ce so
 Au petit matin, le froid a eu raison de la  batterie de nos voisins campeurs. Malgré une mobilisation générale, rien n'y fait, il leur faudra attendre le dépanneur. De discussion en discussion suite à cet événement matinal, nos camarades nous apprennent l'existence d'une cascade un peu à l'écart de la route principale, en haut de laquelle se trouve... un bassin d'eau chaude naturel. Nous faisons donc un petit écart en direction de Fosslaug, pour goûter à ce petit plaisir simple que la nature nous offre. La cascade en soi se révèle impressionnante, non par sa hauteur comme la précédente mais par son envergure et sa puissance. Et la piscine d'eau chaude nous attend.
 
 {% include image.html src="2019/10/01/lage-de-verre/2021-04-09-DJI_0012.jpg" %}
+{% include youtube.html video="cFcFIxVvqIU" %}
 
-Le lendemain nous passons au point le plus au nord de notre voyage, à 66°N, chatouillant le début du cercle polaire. Nous passerons la nuit à Akureyri, capitale de la région du nord Norðurland eystra, et deuxième plus grosse agglomération d'Islande. Mais avant d'y arriver, nous faisons une petite sortie en mer pour découvrir les surprises qui voudront bien se présenter à nous. De part son format (beaucoup de monde !) la sortie est moins chaleureuse que ce que nous avons pu faire précédemment au Canada, mais reste quand même sympathique. Et après un peu de recherche, quelques géants des océans acceptent de venir nous saluer, pour notre plus grand plaisir !
+Le lendemain nous passons au point le plus au nord de notre voyage en passant à Fjallabyggð, à 66°N, chatouillant le début du cercle polaire. La ville en soi est typique avec ces bâtiments en bois colorés.
+
+{% include image.html src="2019/10/01/lage-de-verre/2021-04-09-P1030742.jpg" %}
+
+Nous passerons la nuit à Akureyri, capitale de la région du nord Norðurland eystra, et deuxième plus grosse agglomération d'Islande. Mais avant d'y arriver, nous faisons une petite sortie en mer pour découvrir les surprises qui voudront bien se présenter à nous. De part son format (beaucoup de monde !) la sortie est moins chaleureuse que ce que nous avons pu faire précédemment au Canada, mais reste quand même sympathique. Et après un peu de recherche, quelques géants des océans acceptent de venir nous saluer, pour notre plus grand plaisir !
 
 {% include image.html src="2019/10/01/lage-de-verre/2021-04-09-C7D_6487.jpg" %}
 {% include image.html src="2019/10/01/lage-de-verre/2021-04-09-C7D_6490.jpg" %}
