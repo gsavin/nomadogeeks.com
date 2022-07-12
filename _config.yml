@@ -23,13 +23,14 @@ email: contact@nomadogeeks.com
 description: >- # this means to ignore newlines until "baseurl:"
   Un blog racontant nos voyages à travers le monde.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://nomadogeeks.com" # the base hostname & protocol for your site, e.g. http://example.com
 youtube_channel: https://www.youtube.com/channel/UCmWo6UuPMyP9Injo3RQXMDQ/videos
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 sass:
   style: compressed
