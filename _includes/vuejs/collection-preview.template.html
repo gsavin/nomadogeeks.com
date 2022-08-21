@@ -1,0 +1,17 @@
+{% raw %}
+<script type="text/x-template" id="collection-preview-template">
+    <div class="post-preview">
+      <transition name="post-preview-animator" mode="out-in"><div class="animator" v-bind:key="element.id"></div></transition>
+      <article class="container">
+        <a v-bind:href="element.url">
+          <div class="thumbnail">
+            <figure class="image is-2by1"><background-image v-bind:url="element.image" /></figure>
+            <div class="description">
+              <h2 v-bind:title="element.title">{{ element.title }}</h2>
+            </div>
+          </div>
+        </a>
+      </article>
+    </div>
+</script>
+{% endraw %}

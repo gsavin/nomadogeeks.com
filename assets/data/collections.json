@@ -1,0 +1,12 @@
+---
+---
+{
+    {% assign sorted = site.data["collections"] | sort: 'name' -%}
+    "collections": [{% for collection in sorted %}
+        {
+            "title": "{{ collection.name }}",
+            "url": "/blog/collections/{{ collection.id }}",
+            "image": "{{ collection.preview }}"
+        }{% unless forloop.last %},{% endunless %}{% endfor %}
+    ]
+}

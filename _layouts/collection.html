@@ -1,0 +1,16 @@
+---
+layout: default
+tag:
+description:
+---
+
+<div id="nomadogeeks">
+    {% include nav.html %}
+    <collection id="{{page.id}}" name="{{page.name}}" />
+    {% include footer.html %}
+</div>
+
+{% include vuejs/collection.template.html %}
+{% include vuejs/grid.template.html %}
+{% include vuejs/image-preview.template.html %}
+{% include vuejs/pagination.template.html %}

@@ -1,17 +1,17 @@
 {% raw %}
 <script type="text/x-template" id="post-preview-template">
   <div class="post-preview">
-    <transition name="post-preview-animator" mode="out-in"><div class="animator" v-bind:key="post.id"></div></transition>
+    <transition name="post-preview-animator" mode="out-in"><div class="animator" v-bind:key="element.id"></div></transition>
     <article class="container">
-      <a v-bind:href="post.url">
+      <a v-bind:href="element.url">
         <div class="thumbnail">
           <figure class="image is-2by1"><img v-bind:src="image" /></figure>
           <div class="description">
-            <h2 v-bind:title="post.title">{{ post.title }}</h2>
+            <h2 v-bind:title="element.title">{{ element.title }}</h2>
             <br />
-            <p>{{ getLocation(post.location) }}, {{ post.date | formatDate }}</p>
+            <p v-if="element.location">{{ getLocation(element.location) }}, {{ element.date | formatDate }}</p>
           </div>
-          <flag v-bind:location="post.location" class="is-hidden-touch"></flag>
+          <flag v-if="element.location" v-bind:location="element.location" class="is-hidden-touch"></flag>
         </div>
       </a>
     </article>

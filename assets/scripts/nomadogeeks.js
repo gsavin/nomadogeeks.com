@@ -45,12 +45,12 @@ Vue.component('pagination', {
 })
 
 Vue.component('post-preview', {
-  props: ["post"],
+  props: ["element"],
   inject: ["getAuthorAvatar", "getLocation", "getLocationFlag"],
   template: '#post-preview-template',
   computed: {
     image: function () {
-      return `/assets/images/${this.post.id}/preview.jpg`;
+      return this.element.image || `/assets/images/${this.element.id}/preview.jpg`;
     }
   }
 })

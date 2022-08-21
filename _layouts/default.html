@@ -11,7 +11,7 @@
     <title>nomadoGEEKS | {{ page.title }}</title>
   </head>
   <body class="has-navbar-fixed-top" data-build="{{ site.time | date_to_xmlschema }}">
-    <script src="/assets/scripts/vue.min.js"></script>
+    <script src="/assets/scripts/vue.js"></script>
     <script src="https://d3js.org/d3-array.v1.min.js"></script>
     <script src="/assets/scripts/d3-geo.min.js"></script>
     <script src="/assets/scripts/lunr.min.js" integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"></script>
@@ -20,9 +20,12 @@
     <!--<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>-->
     <script src="/assets/scripts/topojson.min.js"></script>
     <script src="/assets/scripts/nomadogeeks-common.js" type="module"></script>
+    <script src="/assets/scripts/nomadogeeks-grid.js" type="module"></script>
     <script src="/assets/scripts/nomadogeeks-geography.js" type="module"></script>
     <script src="/assets/scripts/nomadogeeks-lazyimage.js" type="module"></script>
     <script src="/assets/scripts/nomadogeeks-posts.js" type="module"></script>
+    <script src="/assets/scripts/nomadogeeks-collection.js" type="module"></script>
+    <script src="/assets/scripts/nomadogeeks-background-image.js" type="module"></script>
     <script src="/assets/scripts/nomadogeeks.js" type="module"></script>
     <div class="vspacer is-hidden-touch"></div>
     {{ content }}

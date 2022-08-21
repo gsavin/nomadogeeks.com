@@ -1,0 +1,20 @@
+- id: bird
+  tag: bird
+  name: Oiseaux
+  description: Diverses photos d'oiseaux d'à travers le monde, en portrait ou plongé dans leur environnement naturel
+  preview: /assets/images/2017/04/09/de-melbourne-a-alice-springs/preview.jpg
+- id: animal
+  tag: animal
+  name: Animaux
+  description:
+  preview: /assets/images/2018/03/26/le-cratere-du-ngorongoro/preview.jpg
+- id: landscape
+  tag: landscape
+  name: Paysages
+  description:
+  preview: /assets/images/2019/05/26/premiers-pas-au-canada/preview.jpg
+- id: drone
+  tag: drone
+  name: Drone
+  description:
+  preview: /assets/images/2020/10/17/direction-le-cercle-polaire/preview.jpg
