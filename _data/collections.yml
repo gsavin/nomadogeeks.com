@@ -18,3 +18,7 @@
   name: Drone
   description:
   preview: /assets/images/2020/10/17/direction-le-cercle-polaire/preview.jpg
+- id: waterfall
+  tag: waterfall
+  name: Cascades
+  preview: /assets/images/2019/10/10/la-route-des-cascades-et-glaciers/preview.jpg
