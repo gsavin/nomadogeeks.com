@@ -9,7 +9,7 @@ for f in $(find assets/images/${post} -type f | sort); do
 	id=${f##assets/images};
 	id=${id%%.jpg};
 	if [ $(basename ${id}) = "preview" -o $(basename ${id}) = "preview-full" ]; then continue; fi
-	imgdate=$(exiv2 -K Exif.Image.DateTimeOriginal -P v ${f} | awk '{gsub(/:/, "/", $1)} 1')
+	imgdate=$(exiv2 -K Exif.Photo.DateTimeOriginal -K Exif.Image.DateTimeOriginal -P v ${f} | head -n1 | awk '{gsub(/:/, "/", $1)} 1')
 	latitude=$(exiv2 -P v -K Xmp.drone-dji.Latitude ${f})
 	longitude=$(exiv2 -P v -K Xmp.drone-dji.Longitude ${f})
 
