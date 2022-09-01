@@ -1,0 +1,56 @@
+.magnifier
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    display: flex
+    flex-direction: column
+    z-index: 100
+
+    figure
+        flex-grow: 1
+
+        .image-content
+            background-color: rgba(0,0,0,0.9)
+
+    .description
+        position: absolute
+        content: ""
+        bottom: 0
+        left: 0
+        max-width: 100%
+
+        h2, p
+            color: #fff
+            display: inline-block
+            margin: 0px
+            max-width: 100%
+
+        h2
+            font-weight: 100
+            font-size: 200%
+            background-color: rgba($nomadodark, 0.9)
+            padding: 1rem 2rem 1rem 3rem
+            text-overflow: ellipsis
+            white-space: nowrap
+            overflow: hidden
+
+        p
+            font-weight: 800
+            font-size: 110%
+            background-color: rgba($nomadored, 0.9)
+            padding: 0.5rem 1rem 0.5rem 3rem
+
+
+        +mobile
+            h2, p
+                padding-left: 1rem
+
+            h2
+                font-size: 100%
+
+            p
+                font-size: 65%
+                font-weight: 600
+    

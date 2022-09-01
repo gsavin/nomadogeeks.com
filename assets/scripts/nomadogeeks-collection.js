@@ -1,7 +1,7 @@
 import { fetchData } from "./nomadogeeks-common.js";
 
 Vue.component("image-preview", {
-    props: ["path", "element"],
+    props: ["path", "element", "index"],
     inject: ["getLocation"],
     template: "#image-preview-template"
 });
@@ -36,12 +36,22 @@ Vue.component("collection", {
           error: null,
           loading: false,
           data: []
-        }
+        },
+        magnifyIndex: -1
       }
     },
     props: ["id", "name"],
     mounted: function () {
       fetchData(this.images, `collections/${this.id}`, (data) => data);
+    },
+    methods: {
+      magnify: function (image) {
+        const index = this.images.data.findIndex((i) => i.id === image);
+
+        if (index >= 0) {
+          this.magnifyIndex = index;
+        }
+      }
     },
     template: "#collection-template"
   });
