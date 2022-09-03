@@ -1,13 +1,38 @@
 Vue.component("magnifier", {
+    data: function () {
+        return {
+            swiping: false,
+            swipeStart: 0
+        };
+    },
     props: ["image", "hasNext", "hasPrevious"],
     inject: ["getLocation"],
     mounted: function () {
         this.$refs.self.focus();
     },
+    methods: {
+        touchStart: function (e) {
+            this.swiping = true;
+            this.swipeStart = e.changedTouches[0].screenX;
+        },
+        touchEnd: function (e) {
+            if (this.swiping) {
+                this.swiping = false;
+                const swipeEnd = e.changedTouches[0].screenX;
+                if (Math.abs(swipeEnd - this.swipeStart) > 30) {
+                    if (swipeEnd < this.swipeStart) {
+                        this.$emit("next");
+                    } else {
+                        this.$emit("previous");
+                    }
+                }
+            }
+        }
+    },
     template: `
     <div class="magnifier" tabindex="0" @keyup.esc="$emit('close')" @keyup.left="$emit('previous')" @keyup.right="$emit('next')" ref="self">
         <blurry-background :url="image.path" />
-        <figure class="image">
+        <figure class="image" @touchstart="touchStart" @touchend="touchEnd">
             <background-image :url="image.path" size="contain" />
         </figure>
         <footer>

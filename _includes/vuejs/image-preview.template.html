@@ -11,7 +11,7 @@
           <div class="description">
             <h2 v-bind:title="element.description">{{ element.name || element.location || " " }}</h2>
             <br />
-            <p><span v-if="element.location && element.name">{{ element.location }}, </span>{{ getLocation(element.country) }}, {{ element.date | formatDate }}</p>
+            <p><span v-if="element.location && element.name" class="is-hidden-touch">{{ element.location }}, </span>{{ getLocation(element.country) }}, {{ element.date | formatDate }}</p>
           </div>
           <flag v-bind:location="element.country" class="is-hidden-touch"></flag>
         </div>
