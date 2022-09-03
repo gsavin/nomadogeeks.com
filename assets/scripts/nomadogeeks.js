@@ -167,6 +167,11 @@ const nomadogeeks = new Vue({
       loading: false,
       data: []
     },
+    collections: {
+      error: null,
+      loading: false,
+      data: []
+    },
     menuOpened: false,
     searchIndex: null
   },
@@ -184,7 +189,8 @@ const nomadogeeks = new Vue({
   created: function () {
     Promise.all([
       fetchData(this.posts, "posts"),
-      fetchData(this.locations, "locations")
+      fetchData(this.locations, "locations"),
+      fetchData(this.collections, "collections")
     ]).then(() => {
       let searchIndex = null;
       this.searchIndex = () => {

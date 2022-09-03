@@ -50,7 +50,7 @@ module Jekyll
       site.data["collections"].each_entry do |collection|
         images = images_per_tag.fetch(collection["tag"], [])
         site.pages << CollectionData.new(site, site.source, File.join("assets", "data", "collections"), collection, images)
-        site.pages << CollectionPage.new(site, site.source, File.join("blog", "collections", collection["id"]), collection)
+        site.pages << CollectionPage.new(site, site.source, File.join("photos", "collections", collection["id"]), collection)
       end
     end
   end

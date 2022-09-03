@@ -12,20 +12,9 @@ Vue.component("collection-preview", {
 });
 
 Vue.component("collections", {
-  data () {
-    return {
-      collections: {
-        error: null,
-        loading: false,
-        data: []
-      }
-    }
-  },
-  mounted: function () {
-    fetchData(this.collections, "collections");
-  },
+  props: ["collections", "elementsPerPage"],
   template: `
-  <grid class="collections" component="collection-preview" :elements="collections.data" elementsPerPage="12" />
+  <grid class="collections" component="collection-preview" :elements="collections" :elementsPerPage="elementsPerPage" />
   `
 });
 

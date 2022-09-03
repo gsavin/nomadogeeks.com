@@ -18,7 +18,12 @@
           <a v-for="location in $root.locationsList" class="navbar-item" v-bind:href="'/blog/' + location.id" v-bind:key="location.id">{{ location.name }}</a>
         </div>
       </div>
-      <a href="/photos" class="navbar-item">Photos</a>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a href="/photos" class="navbar-link{% endraw %}{%if page.url == "/photos/" %} is-active{% endif %}{% raw %}">Photos</a>
+        <div class="navbar-dropdown">
+          <a v-for="collection in $root.collections.data" class="navbar-item" v-bind:href="collection.url" v-bind:key="collection.id">{{ collection.title }}</a>
+        </div>
+      </div>
       <a href="{% endraw %}{{ site.youtube_channel }}{% raw %}" class="navbar-item">Vidéos</a>
       <a href="mailto:{% endraw %}{{ site.email }}{% raw %}" class="navbar-item">Contact</a>
     </div>

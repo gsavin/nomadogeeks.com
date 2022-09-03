@@ -5,7 +5,7 @@ permalink: /photos/
 ---
 <div id="nomadogeeks">
   {% include nav.html %}
-  <collections />
+  <collections v-bind:collections="collections.data" elements-per-page="12" />
   {% include footer.html %}
 </div>
 

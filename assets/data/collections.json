@@ -5,7 +5,7 @@
     "collections": [{% for collection in sorted %}
         {
             "title": "{{ collection.name }}",
-            "url": "/blog/collections/{{ collection.id }}",
+            "url": "/photos/collections/{{ collection.id }}",
             "image": "{{ collection.preview }}"
         }{% unless forloop.last %},{% endunless %}{% endfor %}
     ]
