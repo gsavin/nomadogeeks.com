@@ -1,0 +1,14 @@
+[
+  {% assign sorted = page.images | sort: 'date' | reverse -%}
+  {%- for image in sorted %}
+    {
+      "id": "{{image.id}}",
+      "path": "{{image.path}}",
+      "name": "{{image.name}}",
+      "description": "{{image.description}}",
+      "location": "{{image.location}}",
+      "country": "{{image.country}}",
+      "date": "{{image.date}}"
+    }{% unless forloop.last %},{% endunless %}
+  {%- endfor %}
+]

@@ -45,12 +45,12 @@ Vue.component('pagination', {
 })
 
 Vue.component('post-preview', {
-  props: ["post"],
+  props: ["element"],
   inject: ["getAuthorAvatar", "getLocation", "getLocationFlag"],
   template: '#post-preview-template',
   computed: {
     image: function () {
-      return `/assets/images/${this.post.id}/preview.jpg`;
+      return this.element.image || `/assets/images/${this.element.id}/preview.jpg`;
     }
   }
 })
@@ -167,6 +167,11 @@ const nomadogeeks = new Vue({
       loading: false,
       data: []
     },
+    collections: {
+      error: null,
+      loading: false,
+      data: []
+    },
     menuOpened: false,
     searchIndex: null
   },
@@ -184,7 +189,8 @@ const nomadogeeks = new Vue({
   created: function () {
     Promise.all([
       fetchData(this.posts, "posts"),
-      fetchData(this.locations, "locations")
+      fetchData(this.locations, "locations"),
+      fetchData(this.collections, "collections")
     ]).then(() => {
       let searchIndex = null;
       this.searchIndex = () => {

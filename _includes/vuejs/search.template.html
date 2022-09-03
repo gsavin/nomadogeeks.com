@@ -6,7 +6,7 @@
       <h2 v-if="results.length > 0">Résultats pour "{{ query }}"</h2>
       <h2 v-if="results.length == 0">Aucun résultat trouvé.</h2>
       <posts v-if="results.length > 0" v-bind:posts="results" posts-per-page="4"></posts>
-    </div>
+    </section>
   </div>
 </script>
 {% endraw %}
