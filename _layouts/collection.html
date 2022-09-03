@@ -6,7 +6,17 @@ description:
 
 <div id="nomadogeeks">
     {% include nav.html %}
-    <collection id="{{page.id}}" name="{{page.name}}" />
+    <div id="content">
+      <div class="post" style="background-image: url({{ page.preview }})">
+        <div class="header">
+          <h1>{{ page.title }}</h1>
+          <div class="subtitle"></div>
+        </div>
+        <div class="collection-content">
+            <collection id="{{page.id}}" name="{{page.name}}" />
+        </div>
+      </div>
+    </div>
     {% include footer.html %}
 </div>
 

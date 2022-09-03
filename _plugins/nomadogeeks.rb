@@ -80,7 +80,8 @@ module Jekyll
       self.data["id"] = collection["id"]
       self.data["name"] = collection["name"]
       self.data["description"] = collection["description"]
-      self.data["title"] = "Collection - " + collection["name"]
+      self.data["title"] = "Collection / " + collection["name"]
+      self.data["preview"] = collection["preview"]
     end
   end
 end
