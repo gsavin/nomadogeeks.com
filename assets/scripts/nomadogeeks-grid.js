@@ -6,8 +6,15 @@ Vue.component("grid", {
     },
     props: ["elements", "elementsPerPage", "component"],
     created: function () {
+      const url = new URL(window.location);
+      
+      if (url.searchParams.get("page")) {
+        this.goTo(parseInt(url.searchParams.get("page")) - 1, false);
+      }
+
       window.addEventListener("popstate", (e) => {
         if (window.history.state && window.history.state.page) {
+          console.log("from state");
           this.goTo(window.history.state.page, true);
         } else {
           this.goTo(0, true);
@@ -43,7 +50,9 @@ Vue.component("grid", {
       goTo (page, noPush) {
         this.page = page;
         if (!noPush) {
-          window.history.pushState({page: this.page}, "Page " + this.page);
+          const url = new URL(window.location);
+          url.searchParams.set('page', page + 1);
+          window.history.pushState({page: this.page}, "Page " + this.page, url);
         }
         this.scrollToTop();
       },

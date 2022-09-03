@@ -1,3 +1,5 @@
+require 'digest/sha1'
+
 module Jekyll
   class LocationPageGenerator < Generator
     safe true
@@ -31,6 +33,7 @@ module Jekyll
       images_per_tag = Hash.new
       site.data["images"].each_value do |imageset|
         imageset.each_entry do |image|
+          image["digest"] = Digest::SHA1.hexdigest image["id"]
           image["tags"].each_entry do |tag|
             images_per_tag[tag] = images_per_tag.fetch(tag, []).append(image)
           end

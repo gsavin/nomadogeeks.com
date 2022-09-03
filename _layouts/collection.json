@@ -4,6 +4,7 @@
     {
       "id": "{{image.id}}",
       "path": "{{image.path}}",
+      "digest": "{{image.digest}}",
       "name": "{{image.name}}",
       "description": "{{image.description}}",
       "location": "{{image.location}}",
