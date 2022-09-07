@@ -25,9 +25,22 @@ layout: default
         </div>
       </div>
     </div>
+    {% assign collection_id = page.path | split: "/" | last | replace: ".md", "" %}
+    {% assign collection = site.data["collections"] | where: "id", collection_id | first %}
+    {% if collection %}
+    <section class="post-collection">
+      <h2>Photos de cet article</h2>
+      <div class="collection-content">
+        <collection id="{{collection.id}}" name="{{collection.name}}" />
+      </div>
+    </section>
+    {% endif %}
   </div>
   {% include footer.html %}
 </div>
+
+{% include vuejs/grid.template.html %}
+{% include vuejs/image-preview.template.html %}
 
 {% include vuejs/home.template.html %}
 {% include vuejs/post-preview.template.html %}

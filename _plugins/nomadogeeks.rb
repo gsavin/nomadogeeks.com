@@ -30,14 +30,29 @@ module Jekyll
     safe true
 
     def generate(site)
+      site.data["collections"].each_entry do |collection|
+        collection["hidden"] = false
+      end
       images_per_tag = Hash.new
-      site.data["images"].each_value do |imageset|
+      site.data["images"].each_key do |imageskey|
+        imageset = site.data["images"][imageskey]
+        images_per_tag[imageskey] = []
         imageset.each_entry do |image|
           image["digest"] = Digest::SHA1.hexdigest image["id"]
           image["tags"].each_entry do |tag|
             images_per_tag[tag] = images_per_tag.fetch(tag, []).append(image)
           end
+          images_per_tag[imageskey].append(image)
         end
+        post_path = imageskey.sub("-", "/").sub("-", "/").sub("-", "/")
+        site.data["collections"] << {
+          "id" => imageskey,
+          "tag" => imageskey,
+          "name" => imageskey,
+          "description" => "",
+          "preview" => "/assets/images/" + post_path + "/preview.jpg",
+          "hidden" => true
+        }
       end
       site.data["locations"].each_key do |location|
         images = images_per_tag.fetch(location, [])
@@ -47,7 +62,8 @@ module Jekyll
           "tag" => location,
           "name" => site.data["locations"][location]["name"],
           "description" => "",
-          "preview" => "/assets/images/flags/" + location + ".svg"
+          "preview" => "/assets/images/flags/" + location + ".svg",
+          "hidden" => false
         }
       end
       site.data["collections"].each_entry do |collection|
