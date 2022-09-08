@@ -29,7 +29,17 @@ Vue.component("collection", {
         magnifyIndex: -1
       }
     },
-    props: ["id", "name"],
+    props: {
+      id: {
+        required: true
+      },
+      name: {
+        default: ""
+      },
+      elementsPerPage: {
+        default: 6
+      }
+    },
     mounted: function () {
       fetchData(this.images, `collections/${this.id}`, (data) => data);
 
@@ -38,16 +48,18 @@ Vue.component("collection", {
       if (url.searchParams.get("image")) {
         this.magnify(url.searchParams.get("image"), true);
       }
+
+      this.$root.$on("magnify", this.magnify);
     },
     methods: {
       magnify: function (image, noPush) {
-        const index = this.images.data.findIndex((i) => i.digest === image);
+        const index = this.images.data.findIndex((i) => i.digest === image || i.path == image);
 
         if (index >= 0) {
           this.magnifyIndex = index;
 
           if (!noPush) {
-            this.updateImageLink(image);
+            this.updateImageLink(this.images.data[index].digest);
           }
         }
       },
@@ -77,7 +89,7 @@ Vue.component("collection", {
     },
     template: `
     <div>
-      <grid class="collection" component="image-preview" :elements="images.data" elementsPerPage="6" @magnify="magnify" />
+      <grid class="collection" component="image-preview" :elements="images.data" :elementsPerPage="elementsPerPage" @magnify="magnify" />
       <magnifier v-if="magnifyIndex >= 0" :image="images.data[magnifyIndex]" :hasNext="magnifyIndex < images.data.length - 1" :hasPrevious="magnifyIndex > 0"
         @next="magnifierAction('next')"
         @previous="magnifierAction('previous')"

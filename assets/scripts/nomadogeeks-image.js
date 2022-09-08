@@ -88,7 +88,14 @@ Vue.component("lazy-image", {
         this.src = this.url;
         }
     },
-    template: '<figure class="image lazy" v-bind:class="{loaded: isLoaded, error: isError}"><img v-bind:src="src" ref="image" /><transition name="spinner"><div class="spinner" v-if="!isLoaded"></div></transition></figure>'
+    template: `
+    <figure class="image lazy" v-bind:class="{loaded: isLoaded, error: isError}" @click="$root.$emit('magnify', url)">
+        <img v-bind:src="src" ref="image" />
+        <transition name="spinner">
+            <div class="spinner" v-if="!isLoaded"></div>
+        </transition>
+    </figure>
+    `
 });
 
 Vue.component("blurry-background", {

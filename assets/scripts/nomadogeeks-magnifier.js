@@ -2,7 +2,8 @@ Vue.component("magnifier", {
     data: function () {
         return {
             swiping: false,
-            swipeStart: 0
+            swipeStartX: 0,
+            swipeStartY: 0
         };
     },
     props: ["image", "hasNext", "hasPrevious"],
@@ -13,18 +14,23 @@ Vue.component("magnifier", {
     methods: {
         touchStart: function (e) {
             this.swiping = true;
-            this.swipeStart = e.changedTouches[0].screenX;
+            this.swipeStartX = e.changedTouches[0].screenX;
+            this.swipeStartY = e.changedTouches[0].screenY;
         },
         touchEnd: function (e) {
             if (this.swiping) {
                 this.swiping = false;
-                const swipeEnd = e.changedTouches[0].screenX;
-                if (Math.abs(swipeEnd - this.swipeStart) > 30) {
-                    if (swipeEnd < this.swipeStart) {
+                const swipeEndX = e.changedTouches[0].screenX;
+                const swipeEndY = e.changedTouches[0].screenY;
+
+                if (Math.abs(swipeEndX - this.swipeStartX) > 50) {
+                    if (swipeEndX < this.swipeStartX) {
                         this.$emit("next");
                     } else {
                         this.$emit("previous");
                     }
+                } else if (Math.abs(swipeEndY - this.swipeStartY) > 50) {
+                    this.$emit("close");
                 }
             }
         }
@@ -43,10 +49,10 @@ Vue.component("magnifier", {
                 <flag v-bind:location="image.country" class="is-hidden-touch"></flag>
             </div>
             <div class="control">
-                <div v-if="hasPrevious" class="previous" @click="$emit('previous')"></div>
-                <div v-else class="previous disabled"></div>
-                <div v-if="hasNext" class="next" @click="$emit('next')"></div>
-                <div v-else class="next disabled"></div>
+                <div v-if="hasPrevious" class="is-hidden-touch previous" @click="$emit('previous')"></div>
+                <div v-else class="is-hidden-touch previous disabled"></div>
+                <div v-if="hasNext" class="is-hidden-touch next" @click="$emit('next')"></div>
+                <div v-else class="is-hidden-touch next disabled"></div>
                 <div class="close" @click="$emit('close')"></div>
             </div>
         </footer>
