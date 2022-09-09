@@ -41,15 +41,24 @@ Vue.component("collection", {
       }
     },
     mounted: function () {
-      fetchData(this.images, `collections/${this.id}`, (data) => data);
-
-      const url = new URL(window.location);
-      
-      if (url.searchParams.get("image")) {
-        this.magnify(url.searchParams.get("image"), true);
-      }
+      fetchData(this.images, `collections/${this.id}`, (data) => data)
+        .then(() => {
+          const url = new URL(window.location);
+          
+          if (url.searchParams.get("image")) {
+            this.magnify(url.searchParams.get("image"), true);
+          }
+        });
 
       this.$root.$on("magnify", this.magnify);
+
+      window.addEventListener("popstate", (e) => {
+        if (window.history.state && window.history.state.image) {
+          this.magnify(window.history.state.image, true);
+        } else {
+          this.magnifyIndex = -1;
+        }
+      });
     },
     methods: {
       magnify: function (image, noPush) {
@@ -84,7 +93,12 @@ Vue.component("collection", {
       updateImageLink: function (image) {
         const url = new URL(window.location);
         url.searchParams.set('image', image);
-        window.history.pushState({image: image}, "Image " + this.page, url);
+
+        if (window.history.state && window.history.state.image) {
+          window.history.replaceState({image: image}, "Image " + this.page, url);
+        } else {
+          window.history.pushState({image: image}, "Image " + this.page, url);
+        }
       }
     },
     template: `
