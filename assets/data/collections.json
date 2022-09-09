@@ -1,6 +1,7 @@
 ---
 ---
 {
+    "build": "{{ site.time | date_to_xmlschema }}",
     {% assign sorted = site.data["collections"] | sort: 'name' | where: "hidden", false -%}
     "collections": [{% for collection in sorted %}
         {

@@ -31,23 +31,23 @@ const build = document.querySelector("body").getAttribute("data-build");
 export function loadFromStorage(key) {
   if (hasStorage) {
     try {
-      const existingDataTimestamp = localStorage.getItem(key + ":timestamp");
+      const existingDataTimestamp = localStorage.getItem(key + ":build");
       const existingData = localStorage.getItem(key);
-
       if (existingDataTimestamp == build && existingData) {
         console.debug(`${key} loaded from storage`);
         return JSON.parse(existingData);
       }
+      console.debug(`${key} not found or invalid`);
     } catch (e) {
       console.err("Unable to load data from storage", e);
     }
   }
 }
 
-export function storeData(key, data) {
+export function storeData(key, dataBuild, data) {
   if (hasStorage) {
     try {
-      localStorage.setItem(key + ":timestamp", build);
+      localStorage.setItem(key + ":build", dataBuild);
       localStorage.setItem(key, JSON.stringify(data));
     } catch (e) {
       console.err(`Unable to store ${key} in storage`, e);
@@ -88,7 +88,7 @@ export function fetchData (store, key, transform) {
       return response.json().then(data => {
         store.error = null;
         store.data = transform ? transform(data) : data[key];
-        storeData(key, store.data);
+        storeData(key, data.build, store.data);
       });
     }
   })

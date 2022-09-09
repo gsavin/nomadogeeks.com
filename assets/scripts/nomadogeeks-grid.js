@@ -14,7 +14,6 @@ Vue.component("grid", {
 
       window.addEventListener("popstate", (e) => {
         if (window.history.state && window.history.state.page) {
-          console.log("from state");
           this.goTo(window.history.state.page, true);
         } else {
           this.goTo(0, true);

@@ -1,6 +1,7 @@
 ---
 ---
 {
+  "build": "{{ site.time | date_to_xmlschema }}",
   "posts": [{% assign posts = site.posts | sort: 'date' | reverse %}{% for post in posts %}{
     "id": "{{ post.permalink }}",
     "url": "{{ post.permalink }}",

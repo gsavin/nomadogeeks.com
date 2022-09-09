@@ -1,14 +1,28 @@
-[
-  {% assign sorted = page.images | sort: 'date' | reverse -%}
-  {%- for image in sorted %}
-    {
-      "id": "{{image.digest}}",
-      "path": "{{image.path}}",
-      "name": "{{image.name}}",
-      "description": "{{image.description}}",
-      "location": "{{image.location}}",
-      "country": "{{image.country}}",
-      "date": "{{image.date}}"
-    }{% unless forloop.last %},{% endunless %}
-  {%- endfor %}
-]
+{
+  "build": "{{ site.time | date_to_xmlschema }}",
+  "images": [
+    {% assign sorted = page.images | sort: 'date' | reverse -%}
+    {%- for image in sorted %}
+      {
+        "id": "{{image.digest}}",
+        "path": "{{image.path}}",
+        "name": "{{image.name}}",
+        "description": "{{image.description}}",
+        "location": "{{image.location}}",
+        "country": "{{image.country}}",
+        "date": "{{image.date}}"
+      }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ],
+  "collections": [
+    {% assign children = site.data["collections"] | where: "parent", page.id | sort: "name" %}
+    {%- for child in children %}
+      {
+        "id": "{{child.id}}",
+        "title": "{{child.name}}",
+        "url": "/photos/collections/{{child.id}}/",
+        "image": "{{child.preview}}"
+      }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+  ]
+}

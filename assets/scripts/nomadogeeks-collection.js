@@ -3,12 +3,45 @@ import { fetchData } from "./nomadogeeks-common.js";
 Vue.component("image-preview", {
     props: ["path", "element", "index"],
     inject: ["getLocation"],
-    template: "#image-preview-template"
+    template: `
+    <div class="post-preview">
+      <transition name="post-preview-animator" mode="out-in"><div class="animator" v-bind:key="element.id"></div></transition>
+      <article class="container">
+        <a @click="$parent.$emit('magnify', element.id)">
+          <div class="thumbnail">
+            <figure class="image is-2by1">
+              <background-image :url="element.path" />
+            </figure>
+            <div class="description">
+              <h2 v-bind:title="element.description">{{ element.name || element.location || " " }}</h2>
+              <br />
+              <p><span v-if="element.location && element.name" class="is-hidden-touch">{{ element.location }}, </span>{{ getLocation(element.country) }}, {{ element.date | formatDate }}</p>
+            </div>
+            <flag v-bind:location="element.country" class="is-hidden-touch"></flag>
+          </div>
+        </a>
+      </article>
+    </div>
+    `
 });
 
 Vue.component("collection-preview", {
   props: ["element"],
-  template: "#collection-preview-template"
+  template: `
+  <div class="post-preview">
+    <transition name="post-preview-animator" mode="out-in"><div class="animator" v-bind:key="element.id"></div></transition>
+    <article class="container">
+      <a v-bind:href="element.url">
+        <div class="thumbnail">
+          <figure class="image is-2by1"><background-image v-bind:url="element.image" /></figure>
+          <div class="description">
+            <h2 v-bind:title="element.title">{{ element.title }}</h2>
+          </div>
+        </div>
+      </a>
+    </article>
+  </div>
+  `
 });
 
 Vue.component("collections", {
@@ -21,12 +54,20 @@ Vue.component("collections", {
 Vue.component("collection", {
     data () {
       return {
-        images: {
+        content: {
           error: null,
           loading: false,
-          data: []
+          data: {}
         },
         magnifyIndex: -1
+      }
+    },
+    computed: {
+      images: function() {
+        return this.content.data.images || [];
+      },
+      collections: function() {
+        return this.content.data.collections || [];
       }
     },
     props: {
@@ -41,7 +82,7 @@ Vue.component("collection", {
       }
     },
     mounted: function () {
-      fetchData(this.images, `collections/${this.id}`, (data) => data)
+      fetchData(this.content, `collections/${this.id}`, (data) => data)
         .then(() => {
           const url = new URL(window.location);
           
@@ -62,13 +103,13 @@ Vue.component("collection", {
     },
     methods: {
       magnify: function (image, noPush) {
-        const index = this.images.data.findIndex((i) => i.id === image || i.path == image);
+        const index = this.images.findIndex((i) => i.id === image || i.path == image);
 
         if (index >= 0) {
           this.magnifyIndex = index;
 
           if (!noPush) {
-            this.updateImageLink(this.images.data[index].id);
+            this.updateImageLink(this.images[index].id);
           }
         }
       },
@@ -81,12 +122,12 @@ Vue.component("collection", {
             window.history.pushState({}, "", url);
             break;
           case "next":
-            this.magnifyIndex = Math.min(this.images.data.length - 1, this.magnifyIndex + 1);
-            this.updateImageLink(this.images.data[this.magnifyIndex].id);
+            this.magnifyIndex = Math.min(this.images.length - 1, this.magnifyIndex + 1);
+            this.updateImageLink(this.images[this.magnifyIndex].id);
             break;
           case "previous":
             this.magnifyIndex = Math.max(0, this.magnifyIndex - 1);
-            this.updateImageLink(this.images.data[this.magnifyIndex].id);
+            this.updateImageLink(this.images[this.magnifyIndex].id);
             break;
         }
       },
@@ -103,8 +144,9 @@ Vue.component("collection", {
     },
     template: `
     <div>
-      <grid class="collection" component="image-preview" :elements="images.data" :elementsPerPage="elementsPerPage" @magnify="magnify" />
-      <magnifier v-if="magnifyIndex >= 0" :image="images.data[magnifyIndex]" :hasNext="magnifyIndex < images.data.length - 1" :hasPrevious="magnifyIndex > 0"
+      <collections v-if="collections.length > 0" :collections="this.collections" elements-per-page="12" />
+      <grid class="collection" component="image-preview" :elements="images" :elementsPerPage="elementsPerPage" @magnify="magnify" />
+      <magnifier v-if="magnifyIndex >= 0" :image="images[magnifyIndex]" :hasNext="magnifyIndex < images.length - 1" :hasPrevious="magnifyIndex > 0"
         @next="magnifierAction('next')"
         @previous="magnifierAction('previous')"
         @close="magnifierAction('close')" />

@@ -1,5 +1,6 @@
 ---
 ---
 {
+    "build": "{{ site.time | date_to_xmlschema }}",
     "locations": {{ site.data.locations | jsonify }}
 }

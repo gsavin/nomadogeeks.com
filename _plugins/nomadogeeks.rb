@@ -63,7 +63,8 @@ module Jekyll
           "name" => site.data["locations"][location]["name"],
           "description" => "",
           "preview" => "/assets/images/flags/" + location + ".svg",
-          "hidden" => false
+          "hidden" => true,
+          "parent" => "destinations"
         }
       end
       site.data["collections"].each_entry do |collection|
@@ -83,6 +84,7 @@ module Jekyll
 
       self.process(@name)
       self.read_yaml(File.join(base, "_layouts"), "collection.json")
+      self.data["id"] = collection["id"]
       self.data["images"] = images
     end
   end

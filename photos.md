@@ -9,6 +9,5 @@ permalink: /photos/
   {% include footer.html %}
 </div>
 
-{% include vuejs/collection-preview.template.html %}
 {% include vuejs/grid.template.html %}
 {% include vuejs/pagination.template.html %}
