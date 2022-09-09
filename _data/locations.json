@@ -106,5 +106,13 @@
   },
   "sweden": {
     "name": "Suède"
+  },
+  "norway": {
+    "name": "Norvège",
+    "before": true
+  },
+  "finland": {
+    "name": "Finlande",
+    "before": true
   }
 }
