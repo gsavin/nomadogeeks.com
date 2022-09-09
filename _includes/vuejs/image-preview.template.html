@@ -3,7 +3,7 @@
   <div class="post-preview">
     <transition name="post-preview-animator" mode="out-in"><div class="animator" v-bind:key="element.id"></div></transition>
     <article class="container">
-      <a @click="$parent.$emit('magnify', element.digest)">
+      <a @click="$parent.$emit('magnify', element.id)">
         <div class="thumbnail">
           <figure class="image is-2by1">
             <background-image :url="element.path" />

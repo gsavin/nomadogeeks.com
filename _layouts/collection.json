@@ -2,9 +2,8 @@
   {% assign sorted = page.images | sort: 'date' | reverse -%}
   {%- for image in sorted %}
     {
-      "id": "{{image.id}}",
+      "id": "{{image.digest}}",
       "path": "{{image.path}}",
-      "digest": "{{image.digest}}",
       "name": "{{image.name}}",
       "description": "{{image.description}}",
       "location": "{{image.location}}",

@@ -62,13 +62,13 @@ Vue.component("collection", {
     },
     methods: {
       magnify: function (image, noPush) {
-        const index = this.images.data.findIndex((i) => i.digest === image || i.path == image);
+        const index = this.images.data.findIndex((i) => i.id === image || i.path == image);
 
         if (index >= 0) {
           this.magnifyIndex = index;
 
           if (!noPush) {
-            this.updateImageLink(this.images.data[index].digest);
+            this.updateImageLink(this.images.data[index].id);
           }
         }
       },
@@ -82,11 +82,11 @@ Vue.component("collection", {
             break;
           case "next":
             this.magnifyIndex = Math.min(this.images.data.length - 1, this.magnifyIndex + 1);
-            this.updateImageLink(this.images.data[this.magnifyIndex].digest);
+            this.updateImageLink(this.images.data[this.magnifyIndex].id);
             break;
           case "previous":
             this.magnifyIndex = Math.max(0, this.magnifyIndex - 1);
-            this.updateImageLink(this.images.data[this.magnifyIndex].digest);
+            this.updateImageLink(this.images.data[this.magnifyIndex].id);
             break;
         }
       },
