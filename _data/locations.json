@@ -108,8 +108,7 @@
     "name": "Suède"
   },
   "norway": {
-    "name": "Norvège",
-    "before": true
+    "name": "Norvège"
   },
   "finland": {
     "name": "Finlande",
